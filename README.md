@@ -9,4 +9,10 @@ where A is the amplitude between 1-10, f is the frequency between 5-10 Hz and Φ
 wi is a zero-mean Gaussian noise whose variance is given as 
 ![screenshot 40](https://user-images.githubusercontent.com/78887209/153723223-2ebc7cef-77a4-40c5-8821-d0bee9ffc406.jpg) <br/> 
 <br/> 
+ ![NOİSY DATA POİNTS](https://user-images.githubusercontent.com/78887209/154059447-2249f5f8-3fa2-42b4-9952-61eecdbb4dab.png)
+<br/> 
  After creating 100 noisy data points, we can move on to a sinusoid fitting process with Newton's method.
+ We wish to fit a sinusoid to the measurement data. The equation of the sinusoid is: y = A.sin(2πft+ɸ) with appropriate choices of the parameters A,f and ɸ.
+ To formulate the data-fitting problem, we construct the objective function ∑ (yi - A.sin(2πfti+ɸ)*yi - A.sin(2πfti+ɸ)) where i = 1,2,3,....,100 and yi's are the measurement nosiy data points. <br/> 
+ Let x = [A,f,ɸ]T represent the vector of decision variables.To apply Newton’s method, we need to compute the gradient and the Hessian of f.For calculating Jacobian and Hessian of objective function we defining a function of which calculate partial derivative of f. <br/> 
+ 
